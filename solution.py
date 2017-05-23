@@ -11,12 +11,11 @@ boxes = cross(rows, cols)
 row_units = [cross(r, cols) for r in rows]
 column_units = [cross(rows, c) for c in cols]
 square_units = [cross(rs, cs) for rs in ('ABC','DEF','GHI') for cs in ('123','456','789')]
-diag_units = [[rows[i]+cols[i] for i in range(len(rows))]]
-antidiag_units = [[rows[i]+reverse_cols[i] for i in range(len(rows))]]
+diagonal_units = [[r+c for r, c in zip(rows, cols)], [r+c for r, c in zip(rows, cols[::-1])]]
 
 diagonal_sudoku = 1 # Set this flaf = 0 if you want a non-diagonal solution
 if diagonal_sudoku == 1:
-    unitlist = row_units + column_units + square_units + diag_units + antidiag_units
+    unitlist = row_units + column_units + square_units + diagonal_units
 else:
     unitlist = row_units + column_units + square_units
 
