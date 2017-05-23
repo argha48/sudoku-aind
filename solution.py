@@ -1,7 +1,7 @@
 assignments = []
 rows = 'ABCDEFGHI'
 cols = '123456789'
-reverse_cols = cols[::-1]
+
 
 def cross(A, B):
     "Cross product of elements in A and elements in B."
